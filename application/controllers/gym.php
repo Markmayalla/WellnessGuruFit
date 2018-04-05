@@ -279,6 +279,7 @@ class Gym extends CI_Controller {
                 $data['groups'] = $result;
             }
 
+            $data['active'] = 'groups';
             $data['sub_content'] = 'groups';
 
 
@@ -347,6 +348,7 @@ class Gym extends CI_Controller {
                 $data['bundles'] = $result;
             }
 
+            $data['active'] = 'bundles';
             $data['sub_content'] = 'bundles';
         }
 
@@ -443,13 +445,14 @@ class Gym extends CI_Controller {
             $data['rates'] = $rates;
             $data['groups'] = $groups;
             $data['bundles'] = $bundles;
+            $data['active'] = 'rates';
             $data['sub_content'] = 'rates';
         }
 
         $gym = $this->gym_model->get($uriSegment3);
         $data['gym'] = $gym;
+        $data['menu_active'] = 'gym_rates';
         $data['main_content'] = 'gym_rates';
-        $data['active'] = 'gym_rates';
         $this->load->view('includes/gym', $data);
 
 
