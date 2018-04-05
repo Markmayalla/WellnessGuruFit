@@ -1,22 +1,4 @@
 
- <div class="row">
-    <div class="col-lg-3">
-        <div class="box box-danger">
-            <div class="box-header">
-                <h3 class="box-title">Gym Rate Menu </h3>
-            </div>
-            <div class="box-body">
-        <ul class="nav nav-pills nav-stacked">
-            <li class=""><a  href="<?PHP echo base_url() ?>index.php/gym/gym_rates/<?PHP echo $gym->id; ?>/groups">Rate Groups</a> </li>
-            <li><a href="<?PHP echo base_url() ?>index.php/gym/gym_rates/<?PHP echo $gym->id; ?>/bundles">Rate Bundles</a> </li>
-            <li><a href="<?PHP echo base_url() ?>index.php/gym/gym_rates/<?PHP echo $gym->id; ?>/rates">Rates Amounts</a> </li>
-        </ul>
-
-    </div>
-</div>
-</div>
-
-
     <div class="row">
         <div class="col-lg-3">
 
@@ -54,7 +36,6 @@
 
                 </Div>
             </div>
-
 
             <?PHP $this->load->view('gym/gym_rates/' . $sub_content); ?>
         </div>
