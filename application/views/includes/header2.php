@@ -262,59 +262,59 @@
 
                     ?>
 
-                    <li class="<?PHP echo (isset($active) && $active == 'dashboard' ? 'active' : ''); ?>">
+                    <li class="<?PHP echo (isset($menu_active) && $menu_active == 'dashboard' ? 'active' : ''); ?>">
                         <a href="<?PHP echo base_url(); ?>index.php/gym/dashboard">
                             <i class="fa fa-dashboard"></i> <span>GYM Dashboard</span>
                         </a>
                     </li>
 
                     <?PHP if (isset($gym) && count($gym) > 0) { ?>
-                        <li class="<?PHP echo (isset($active) && $active == 'view_gym' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'view_gym' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/view_gym/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-flash"></i> <span><?PHP echo strtoupper($gym->name); ?></span>
                             </a>
                         </li>
-                        <li class="<?PHP echo (isset($active) && $active == 'about_gym' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'about_gym' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/about_gym/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-question"></i> <span>About GYM</span>
                             </a>
                         </li>
-                        <li class="<?PHP echo (isset($active) && $active == 'gym_photos' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'gym_photos' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/gym_photos/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-picture-o"></i> <span>Manage Photos</span>
                             </a>
                         </li>
-                        <li class="<?PHP echo (isset($active) && $active == 'gym_address' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'gym_address' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/gym_address/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-map-marker"></i> <span>Manage Address</span>
                             </a>
 
                         </li>
 
-                        <li class="<?PHP echo (isset($active) && $active == 'gym_classes' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'gym_classes' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/gym_classes/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-calendar-o"></i> <span>Manage Classes</span>
                             </a>
                         </li>
                         
-                        <li class="<?PHP echo (isset($active) && $active == 'gym_rates' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'gym_rates' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/gym_rates/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-money"></i> <span>Manage Rates</span>
                             </a>
                             
                         </li>
                     
-                        <li class="<?PHP echo (isset($active) && $active == 'gym_working_hours' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'gym_working_hours' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/gym_working_hours/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-clock-o"></i> <span>Set Working Hours</span>
                             </a>
                         </li>
-                        <li class="<?PHP echo (isset($active) && $active == 'gym_facilities' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'gym_facilities' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/gym_facilities/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-tasks"></i> <span>Manage Facilities</span>
                             </a>
                         </li>
-                        <li class="<?PHP echo (isset($active) && $active == 'gym_equipments' ? 'active' : ''); ?>">
+                        <li class="<?PHP echo (isset($menu_active) && $menu_active == 'gym_equipments' ? 'active' : ''); ?>">
                             <a href="<?PHP echo base_url(); ?>index.php/gym/gym_equipments/<?PHP echo $gym->id; ?>">
                                 <i class="fa fa-chain"></i> <span>Manage Equipments</span>
                             </a>
