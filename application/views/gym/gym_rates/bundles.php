@@ -1,4 +1,6 @@
 
+
+
 <div class="row">
     <div class="col-lg-6">
         <div class="box box-primary">
@@ -18,8 +20,10 @@
             </div>
         </div>
 
+
     </div>
     </div>
+
 </div>
 
     <div class="col-lg-5">
@@ -27,7 +31,6 @@
             <div class="box-header">
                 <h3 class="box-title">Gym Rate Bundles</h3>
             </div>
-
 
     <div class="col-lg-6">
        <div class="box box-info">

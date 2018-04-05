@@ -1,4 +1,6 @@
 
+
+
 <div class="row">
     <div class="col-lg-6">
         <div class="box box-primary">
@@ -27,7 +29,6 @@
             <div class="box-header">
                 <h3 class="box-title">Gym Rate Groups</h3>
             </div>
-
 
     <div class="col-lg-6">
         <div class="box box-info">
@@ -68,7 +69,6 @@
 
                     ?>
                     <tbody>
-
 
                     </tbody>
                 </table>
