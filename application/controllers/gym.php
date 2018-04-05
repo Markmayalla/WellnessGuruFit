@@ -115,9 +115,9 @@ class Gym extends CI_Controller {
    
     public function gym_working_hours(){
 
-         $uri_segment3 = $this->uri->segment(3);
-         $uri_segment4 = $this->uri->segment(4);
-         $uriSegment_5 = $this->uri->segment(5);
+         $uriSegment3 = $this->uri->segment(3);
+         $uriSegment4 = $this->uri->segment(4);
+         $uriSegment5 = $this->uri->segment(5);
 
 
         //Loading Important Models
@@ -126,41 +126,68 @@ class Gym extends CI_Controller {
 
 
         //my input data to database table gym_working_hours
-        if ($uri_segment4 == "insert") { 
-            $formData = array();
-            $formData['gym_id'] = $uri_segment3;
-            $formData['day'] = strtolower($_POST['day']);
-            $formData['timerange'] = strtolower($_POST['timerange']);
-            $this->gym_working_hour_model->insert($formData);
+                 if ($uriSegment4 == 'insert' || $uriSegment4 == false) {
+                $data['form'] = array(
+                    'action' => base_url() . "index.php/gym/gym_working_hours/" . $uriSegment3 .'/insert/',
+                    'btn_name' => 'add_schedule',
+                    'btn_value' => 'Add schedule'
+                );
 
-        }
-
-           if ($uri_segment4 == "update") {
-            $form_data = array();
-            foreach ($_POST as $key => $value) {
-                if ($key != 'update') {
-                    $form_data[$key] = $value;
+                if (isset($_POST['add_schedule'])) {
+                    $formData = array();
+                    foreach ($_POST as $key => $value) {
+                        if ($key != 'add_schedule') {
+                            $formData[$key] = $value;
+                        }
+                    }
+                    $formData['gym_id'] = $uriSegment3;
+                    $this->gym_working_hour_model->insert($formData);
+                    $data['success_msg'] = 'schedule Added Successfully';
                 }
+
             }
-            $this->gym_working_hour_model->update($uri_segment3, $form_data);
-            $data['success_msg'] = "Update Successfull";
-        }
-              
-             
 
-               if($uri_segment4 =="delete"){
-             $this->gym_working_hour_model->delete($uriSegment_5);
-                $data['success_msg'] = "Deleted  is successfull";
+            if ($uriSegment4 == 'update') {
+                $data['form'] = array(
+              'action' => base_url() . "index.php/gym/gym_working_hours/" . $uriSegment3 . '/update/' . $uriSegment5,
+                 'btn_name' => 'edit_schedule',
+                'btn_value' => 'Edit schedule'
+                );
+                $form_values = $this->gym_working_hour_model->get($uriSegment5);
+                $data['form_values'] = $form_values;
 
-         }
-          $data['success_msg'] = "Added Successfull";
+                if (isset($_POST['edit_schedule'])) {
+                    $formData = array();
+                    foreach ($_POST as $key => $value) {
+                        if ($key != 'edit_schedule') {
+                            $formData[$key] = $value;
+                        }
+                    }
+
+                    $this->gym_working_hour_model->update($uriSegment5, $formData);
+                    $data['success_msg'] = 'schedule Updated Successfully';
+                }
+
+
+
+            }
+
+            if ($uriSegment4 == 'delete') {
+                $data['form'] = array(
+                    'action' => base_url() . "index.php/gym/gym_working_hours/" . $uriSegment3 . '/insert',
+                    'btn_name' => 'add_schedule',
+                    'btn_value' => 'Add schedule'
+                );
+                $this->gym_working_hour_model->delete($uriSegment5);
+            
+            }
         
  
         //Geting Gym Working Hours with respect to the Gym ID
-        $gym_working_hours = $this->gym_working_hour_model->get_many_by(array('gym_id' => $uri_segment3));
+        $gym_working_hours = $this->gym_working_hour_model->get_many_by(array('gym_id' => $uriSegment3));
         $data['gym_working_hours'] = $gym_working_hours; 
        
-        $gym = $this->gym_model->get($uri_segment3);
+        $gym = $this->gym_model->get($uriSegment3);
         $data['gym'] = $gym;
         $data['main_content'] = "gym_working_hours";
         $data['active'] = "gym_working_hours";

@@ -2,7 +2,7 @@
     <div class="col-lg-5">
         <div class="box box-primary">
             <Div class="box-header">
-                <h3 class="box-title">Add/Edit Rate Form</h3>
+                <h3 class="box-title">Add/Edit Schedule Form</h3>
             </Div>
 
             <div class="box-body">
